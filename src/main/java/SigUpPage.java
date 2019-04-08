@@ -74,6 +74,7 @@ public class SigUpPage {
     }
 
     public boolean isErrorVisible(String message) {
-        return driver.findElements(By.xpath(String message(errorByText, message))).size() > 0 &&;
+        return driver.findElements(By.xpath(String message(errorByText, message))).size() > 0
+                && driver.findElements(By.xpath(String message(errorByText, message))).get(0).isDisplayed();
     }
 }
