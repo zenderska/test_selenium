@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +21,12 @@ public class SignUpTest {
     }
 
     @Test
-    public void
+    public void typeInvalidYear()   {
+        page = new SignUpPage(driver);
+        page.setGender("M")
+                .setAge("7");
+        Assert.assertTrue(page.isErrorVisible("Проверьте все поля."));
+    }
 
     @After
     public void tearDown()  {
